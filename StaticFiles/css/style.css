@@ -1,0 +1,45 @@
+body {
+        background: #f4f4f4;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* A wrapper to center both h2 and table together */
+    .center-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px; /* space from top */
+    }
+
+    table {
+        width: 71%;
+        border-collapse: collapse;
+        background: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        margin-top: 15px;  
+    }
+
+    th, td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+
+    th {
+        background-color: #3498db;
+        color: white;
+        font-size: 16px;
+    }
+
+    tr:nth-child(even) {
+        background: #f9f9f9;
+    }
+
+    tr:hover {
+        background: #e8f4ff;
+        cursor: pointer;
+    }

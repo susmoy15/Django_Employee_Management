@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Employee Directory</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="center-container">
+    <h2>Employee's Record</h2>
+    <a href="" style="float: right; margin-left: 1350px;">Add Employee</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Designation</th>
+                <th>salary</th>
+                <th>Manager</th>
+                <th>Department</th>
+                <th>active?</th> 
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emp in employees %}
+                <tr>
+                    <td>{{ emp.id }}</td>
+                    <td>{{ emp.full_name }}</td>
+                    <td>{{ emp.email }}</td>
+                    <td>{{ emp.designation }}</td>
+                    <td>{{ emp.salary }}</td>
+                    <td>{{ emp.manager }}</td>
+                    <td>{{ emp.department }}</td>
+                    <td>{{ emp.is_active }}</td>
+                    <td>
+                        <div>
+                            <a href="{% url 'employee_detail' emp.id %}"><i class="fa fa-eye"></i></a>
+                            <a href=""><i class="fa fa-edit"></i></a>
+                            <a href=""><i class="fa fa-trash"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>
