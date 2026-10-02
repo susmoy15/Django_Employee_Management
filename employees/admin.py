@@ -12,4 +12,4 @@ class EmployeeAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Department)
-admin.site.register(Employee, EmployeeAdmin)
+admin.site.register(Employee, EmployeeAdmin) 

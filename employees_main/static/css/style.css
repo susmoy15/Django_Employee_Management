@@ -1,45 +1,337 @@
-body {
-        background: #f4f4f4;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
+/* =========================
+   GLOBAL
+   ========================= */
 
-    /* A wrapper to center both h2 and table together */
-    .center-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 40px; /* space from top */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #eef6ff, #f8fbff);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #2c3e50;
+}
+
+
+/* =========================
+   EMPLOYEE LIST / HOME PAGE
+   ========================= */
+
+.employee-list {
+    width: 92%;
+    max-width: 1400px;
+    margin: 40px auto;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.employee-list h2 {
+    text-align: center;
+    font-size: 30px;
+    margin: 0 0 25px;
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   ADD EMPLOYEE BUTTON
+   ========================= */
+
+.employee-list > a {
+    display: inline-block;
+    float: right;
+
+    margin-bottom: 20px;
+    padding: 11px 20px;
+
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.25);
+
+    transition: 0.3s;
+}
+
+.employee-list > a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.35);
+}
+
+
+/* =========================
+   TABLE CONTAINER
+   ========================= */
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    background: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   TABLE HEADER
+   ========================= */
+
+th {
+    padding: 15px 12px;
+
+    background: linear-gradient(
+        135deg,
+        #3498db,
+        #2980b9
+    );
+
+    color: white;
+
+    font-size: 15px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    border: none;
+}
+
+
+/* =========================
+   TABLE DATA
+   ========================= */
+
+td {
+    padding: 14px 12px;
+
+    border-bottom: 1px solid #edf1f5;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #455a64;
+}
+
+
+/* Remove last row border */
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================
+   ALTERNATE ROW
+   ========================= */
+
+tr:nth-child(even) {
+    background: #f8fbff;
+}
+
+
+/* =========================
+   ROW HOVER
+   ========================= */
+
+tbody tr {
+    transition: 0.25s;
+}
+
+tbody tr:hover {
+    background: #eaf5ff;
+
+    transform: scale(1.002);
+
+    box-shadow:
+        0 4px 12px rgba(52, 152, 219, 0.08);
+}
+
+
+/* =========================
+   ACTIVE STATUS
+   ========================= */
+
+td:nth-child(8) {
+    font-weight: bold;
+}
+
+
+/* =========================
+   ACTION ICONS
+   ========================= */
+
+td a {
+    display: inline-flex;
+
+    width: 32px;
+    height: 32px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 3px;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: 0.25s;
+}
+
+
+/* View */
+
+td a:first-child {
+    color: #3498db;
+    background: #eaf5ff;
+}
+
+td a:first-child:hover {
+    background: #3498db;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* Edit */
+
+td a:nth-child(2) {
+    color: #f39c12;
+    background: #fff5e6;
+}
+
+td a:nth-child(2):hover {
+    background: #f39c12;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* Delete */
+
+td a:nth-child(3) {
+    color: #e74c3c;
+    background: #ffeded;
+}
+
+td a:nth-child(3):hover {
+    background: #e74c3c;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1000px) {
+
+    .employee-list {
+        width: 96%;
+        overflow-x: auto;
     }
 
     table {
-        width: 80%;
-        border-collapse: collapse;
-        background: white;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        border-radius: 12px;
-        overflow: hidden;
-        margin-top: 15px; /* space under the heading */
+        min-width: 900px;
     }
+}
 
-    th, td {
-        padding: 12px 15px;
-        border: 1px solid #ddd;
-        text-align: center;
-    }
+/* =========================
+   EMPLOYEE DETAIL PAGE
+   ========================= */
 
-    th {
-        background-color: #3498db;
-        color: white;
-        font-size: 16px;
-    }
+/* =========================
+   EMPLOYEE DETAIL PAGE
+   ========================= */
 
-    tr:nth-child(even) {
-        background: #f9f9f9;
-    }
+.center-container {
+    position: relative;
+    width: 380px;
+    margin: 50px auto;
+    padding: 25px 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    text-align: center;
+    overflow: hidden;
 
-    tr:hover {
-        background: #e8f4ff;
-        cursor: pointer;
-    }
+    box-shadow: 0 15px 35px rgba(52, 152, 219, 0.18);
+    border: 1px solid rgba(52, 152, 219, 0.15);
+}
+
+/* Top Blue Border */
+.center-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #3498db, #6dd5fa);
+}
+
+/* Employee Image */
+.center-container img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+
+    border-radius: 50%;
+    border: 5px solid white;
+    outline: 3px solid #3498db;
+
+    box-shadow: 0 6px 18px rgba(52, 152, 219, 0.25);
+
+    margin-bottom: 18px;
+}
+
+/* Heading */
+.center-container h2 {
+    color: #2c3e50;
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+/* Employee Information */
+.center-container p {
+    background: #f5f9fd;
+    padding: 11px 15px;
+    margin: 10px 0;
+
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+
+    color: #34495e;
+    font-size: 15px;
+    text-align: left;
+
+    transition: 0.3s;
+}
+
+/* Hover */
+.center-container p:hover {
+    background: #eaf5ff;
+    transform: translateX(4px);
+}

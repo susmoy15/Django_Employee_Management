@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'employees',
 ]
 
@@ -115,9 +116,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR/'StaticFiles' # for production, django will create a new folder called "static" on the root folder for production use. By running collectstatic command
+STATIC_URL = 'static/'  #this is for url  prefix:
+STATIC_ROOT = BASE_DIR/'StaticFiles' # for production, django will create a new folder called "staticFiles" on the root folder for production use. By running collectstatic command
 STATICFILES_DIRS = ['employees_main/static']   #we are telling djnago to look into this path for any static filess
 
+
+  
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
