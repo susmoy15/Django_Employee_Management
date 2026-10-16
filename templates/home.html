@@ -41,8 +41,12 @@
                     <td>
                         <div>
                             <a href="{% url 'employee_detail' emp.id %}"><i class="fa fa-eye"></i></a>
-                            <a href=""><i class="fa fa-edit"></i></a>
-                            <a href=""><i class="fa fa-trash"></i></a>
+                            <a href="{% url 'edit_employee' emp.id %}">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a href="{% url 'delete_employee' emp.id %}">
+                                <i class="fa fa-trash"></i>
+                            </a>
                         </div>
                     </td>
                 </tr>
